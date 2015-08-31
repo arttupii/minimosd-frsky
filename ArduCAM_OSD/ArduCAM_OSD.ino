@@ -155,15 +155,9 @@ void setup()
     for(panel = 0; panel < npanels; panel++) readPanelSettings();
     panel = 0; //set panel to 0 to start in the first navigation screen
     // Show bootloader bar
-//    loadBar();
-delay(2000);
-Serial.flush(); 
-    // Startup MAVLink timers  
-    //mavlinkTimer.Set(&OnMavlinkTimer, 120);
-
-    // House cleaning, clear display and enable timers
-//    osd.clear();
-    //mavlinkTimer.Enable();
+    //    loadBar();
+    delay(2000);
+    Serial.flush(); 
 
 } // END of setup();
 
@@ -177,30 +171,13 @@ Serial.flush();
 void loop() 
 {
 
-    /*if(enable_mav_request == 1){//Request rate control
-        //osd.clear();
-        //osd.setPanel(3,10);
-        //osd.openPanel();
-        //osd.printf_P(PSTR("Requesting DataStreams...")); 
-        //osd.closePanel();
-        //for(int n = 0; n < 3; n++){
-        //    request_mavlink_rates();//Three times to certify it will be readed
-        //    delay(50);
-        //}
-        enable_mav_request = 0;
-        //delay(2000);
-        osd.clear();
-        waitingMAVBeats = 0;
-        lastMAVBeat = millis();//Preventing error from delay sensing
-    }*/
-    
     //Run "timer" every 120 miliseconds
     if(millis() > mavLinkTimer + 120){
       mavLinkTimer = millis();
       OnMavlinkTimer();
     }
-    read_mavlink();
-    //mavlinkTimer.Run();
+    read_frsky();
+
 }
 
 /* *********************************************** */
