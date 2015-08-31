@@ -1,5 +1,5 @@
 
-#include <FastSerial.h>
+//#include <FastSerial.h>
 
 #include "ArduCam_Max7456.h"
 // Get the common arduino functions
