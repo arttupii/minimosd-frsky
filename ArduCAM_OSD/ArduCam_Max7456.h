@@ -68,10 +68,10 @@
 //If PAL
 #ifdef isPAL
   #define MAX7456_screen_size 480 //16x30
-  #define MAX7456_screen_rows 0x10
+  #define MAX7456_screen_rows 15
 #else
   #define MAX7456_screen_size 390 //13x30
-  #define MAX7456_screen_rows 0x0D
+  #define MAX7456_screen_rows 12
 #endif
 
 //------------------ the OSD class -----------------------------------------------
@@ -89,7 +89,6 @@ class OSD: public BetterStream
     void control(uint8_t ctrl);
     void detectMode(void);
     void setMode(int mode);
-    void setBrightness();
     void openSingle(uint8_t x, uint8_t y);
     int getMode(void);
     int getCenter(void);
